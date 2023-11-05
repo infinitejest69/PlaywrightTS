@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { PageManager } from '../Pages/pagemanager';
+import { PageManager } from '../../Pages/pagemanager';
 
 test('getting started should contain table of contents', async ({ page }) => {
   const manager = new PageManager(page);

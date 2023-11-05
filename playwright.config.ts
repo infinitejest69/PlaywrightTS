@@ -13,6 +13,25 @@ export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
+  expect: {
+    // Maximum time expect() should wait for the condition to be met.
+    timeout: 5000,
+    toHaveScreenshot: {
+      // An acceptable amount of pixels that could be different, unset by default.
+      maxDiffPixels: 10,
+    },
+    toMatchSnapshot: {
+      // An acceptable ratio of pixels that are different to the
+      // total amount of pixels, between 0 and 1.
+      maxDiffPixelRatio: 0.1,
+    },
+  },
+  //timeout:30000,
+  // path to the global setup files.
+  //globalSetup: require.resolve('./global-setup'),
+  // path to the global teardown files.
+  //globalTeardown: require.resolve('./global-teardown'),
+  //shard: { total: 10, current: 3 },
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -38,7 +57,7 @@ export default defineConfig({
     //geolocation: { longitude: 40.7128, latitude: 74.006 },
     locale: 'en-GB',
     timezoneId: 'Europe/London',
-    navigationTimeout: 3000,
+    //navigationTimeout: 3000,
     offline: false,
     hasTouch: false,
     isMobile: false,
@@ -50,7 +69,7 @@ export default defineConfig({
     //trace: 'retain-on-failure',
     trace: { mode: 'retain-on-failure', attachments: true, screenshots: true, snapshots: true, sources: true },
     screenshot: { fullPage: true, mode: 'only-on-failure', omitBackground: true },
-    serviceWorkers: 'allow',
+    //serviceWorkers: 'allow',
     //storageState:'state.json'
     //userAgent: 'some custom ua',
   },

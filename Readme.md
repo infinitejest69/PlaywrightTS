@@ -18,7 +18,7 @@
 | Sharding                                                                               | :x:                |
 | Web server                                                                             | :x:                |
 | CI pipeline                                                                            | :x:                |
-| Sharding                                                                               | :x:                |
+| Visual Testing                                                                         | :x:                |
 | [AllureReport](https://www.npmjs.com/package/allure-playwright)                        | :x:                |
 | [monocart-reporter](https://github.com/cenfun/monocart-reporter#preview)               | :x:                |
 | [Trx reporter](https://www.npmjs.com/package/playwright-trx-reporter?activeTab=readme) | :x:                |
