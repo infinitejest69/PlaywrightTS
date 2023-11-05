@@ -1,7 +1,11 @@
 import { expect, type Locator, type Page } from '@playwright/test';
+import { NavBar } from '../Components/NavBar';
+import { DocSearchModal } from '../Components/DocSearchModal';
 
 export class PlaywrightDevPage {
   readonly page: Page;
+  readonly NavBar: NavBar;
+  readonly DocSearchModal: DocSearchModal;
   readonly getStartedLink: Locator;
   readonly gettingStartedHeader: Locator;
   readonly pomLink: Locator;
@@ -9,6 +13,8 @@ export class PlaywrightDevPage {
 
   constructor(page: Page) {
     this.page = page;
+    this.NavBar = new NavBar(this.page);
+    this.DocSearchModal = new DocSearchModal(this.page);
     this.getStartedLink = page.locator('a', { hasText: 'Get started' });
     this.gettingStartedHeader = page.locator('h1', { hasText: 'Installation' });
     this.pomLink = page
