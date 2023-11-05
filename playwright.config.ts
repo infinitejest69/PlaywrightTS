@@ -20,14 +20,39 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: process.env.CI
+    ? [['list'], ['json', { outputFile: 'test-results\\test-results.json' }], ['blob'], ['junit', { outputFile: 'test-results\\test-results.xml' }]]
+    : [['list'], ['html', { open: 'never' }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    launchOptions: {
+      slowMo: 50,
+      devtools: false,
+    },
+    headless: true,
+    viewport: { width: 1600, height: 1080 },
+    ignoreHTTPSErrors: true,
+    //Edinburgh
+    geolocation: { longitude: 55.9533, latitude: 3.1883 },
+    //NewYork
+    //geolocation: { longitude: 40.7128, latitude: 74.006 },
+    locale: 'en-GB',
+    timezoneId: 'Europe/London',
+    navigationTimeout: 3000,
+    offline: false,
+    hasTouch: false,
+    isMobile: false,
+    javaScriptEnabled: true,
+    video: 'on-first-retry',
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'http://www.demoblaze.com',
-
+    baseURL: 'https://playwright.dev/',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'retain-on-failure',
+    //trace: 'retain-on-failure',
+    trace: { mode: 'retain-on-failure', attachments: true, screenshots: true, snapshots: true, sources: true },
+    screenshot: { fullPage: true, mode: 'only-on-failure', omitBackground: true },
+    serviceWorkers: 'allow',
+    //storageState:'state.json'
+    //userAgent: 'some custom ua',
   },
 
   /* Configure projects for major browsers */
@@ -37,10 +62,18 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+
+    {
+      name: 'Microsoft Edge',
+      use: {
+        ...devices['Desktop Edge'],
+        channel: 'msedge',
+      },
+    },
 
     // {
     //   name: 'webkit',

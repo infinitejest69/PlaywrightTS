@@ -12,7 +12,13 @@
     "@playwright/test": "^1.39.0",
     "@types/node": "^20.8.10"
   },
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "report": "npx playwright show-report",
+    "test-ui": "npx playwright test --ui",
+    "update": "npm install -D @playwright/test@latest",
+    "test-head": "npx playwright test --headed"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"

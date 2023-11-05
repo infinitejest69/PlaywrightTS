@@ -21,10 +21,6 @@ export class PlaywrightDevPage {
     this.tocList = page.locator('article div.markdown ul > li > a');
   }
 
-  async goto() {
-    await this.page.goto('https://playwright.dev');
-  }
-
   async getStarted() {
     await this.getStartedLink.first().click();
     await expect(this.gettingStartedHeader).toBeVisible();
