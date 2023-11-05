@@ -33,7 +33,7 @@ test('search for "test" shows "Writing Tests" in results', async ({ page }) => {
   await expect(manager.CommonPage().DocSearchModal().searchDocsModalLink('Writing Tests')).toBeInViewport();
 });
 
-test('search for "fail" shows "Pass" in results', async ({ page }) => {
+test('Xfail with a failing result', async ({ page }) => {
   //interesting Xfail
   test.fail(true, 'Failing due to bug #1234');
   const manager = new PageManager(page);
@@ -42,4 +42,15 @@ test('search for "fail" shows "Pass" in results', async ({ page }) => {
   await manager.CommonPage().DocSearchModal().searchDocs().fill('fail');
   await expect(manager.CommonPage().DocSearchModal().searchDocsModalLink('Pass')).toBeVisible();
   await expect(manager.CommonPage().DocSearchModal().searchDocsModalLink('Pass')).toBeInViewport();
+});
+
+test('Xfail with a passing result', async ({ page }) => {
+  //interesting Xfail
+  test.fail(true, 'Failing due to bug #1234');
+  const manager = new PageManager(page);
+  await manager.PlaywrightDevPage().goto();
+  await manager.CommonPage().NavBar().search.click();
+  await manager.CommonPage().DocSearchModal().searchDocs().fill('page object');
+  await expect(manager.CommonPage().DocSearchModal().searchDocsModalLink('page object models').first()).toBeVisible();
+  await expect(manager.CommonPage().DocSearchModal().searchDocsModalLink('page object models').first()).toBeInViewport();
 });
