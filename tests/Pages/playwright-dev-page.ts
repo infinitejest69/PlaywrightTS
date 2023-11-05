@@ -4,7 +4,7 @@ import { DocSearchModal } from '../Components/DocSearchModal';
 
 export class PlaywrightDevPage {
   readonly page: Page;
-  readonly NavBar: NavBar;
+  NavBar: NavBar;
   readonly DocSearchModal: DocSearchModal;
   readonly getStartedLink: Locator;
   readonly gettingStartedHeader: Locator;

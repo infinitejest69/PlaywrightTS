@@ -29,6 +29,6 @@ test('should show search', async ({ page }) => {
   await playwrightDev.goto();
   await playwrightDev.NavBar.search.click();
   await playwrightDev.DocSearchModal.searchDocs().fill('Test');
-  expect(playwrightDev.DocSearchModal.searchDocsModalLink('Writing Tests')).toBeVisible();
-  expect(playwrightDev.DocSearchModal.searchDocsModalLink('Writing Tests')).toBeInViewport();
+  await expect(playwrightDev.DocSearchModal.searchDocsModalLink('Writing Tests')).toBeVisible();
+  await expect(playwrightDev.DocSearchModal.searchDocsModalLink('Writing Tests')).toBeInViewport();
 });
