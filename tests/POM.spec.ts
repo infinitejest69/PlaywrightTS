@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
-import { PlaywrightDevPage } from './Pages/playwright-dev-page';
+import { PageManager } from '../Pages/pagemanager';
 
 test('getting started should contain table of contents', async ({ page }) => {
-  const playwrightDev = new PlaywrightDevPage(page);
-  await playwrightDev.goto();
-  await playwrightDev.getStarted();
-  await expect(playwrightDev.tocList).toHaveText([
+  const manager = new PageManager(page);
+  await manager.PlaywrightDevPage().goto();
+  await manager.PlaywrightDevPage().getStarted();
+  await expect(manager.PlaywrightDevPage().tocList).toHaveText([
     `How to install Playwright`,
     `What's Installed`,
     `How to run the example test`,
@@ -18,17 +18,28 @@ test('getting started should contain table of contents', async ({ page }) => {
 });
 
 test('should show Page Object Model article', async ({ page }) => {
-  const playwrightDev = new PlaywrightDevPage(page);
-  await playwrightDev.goto();
-  await playwrightDev.pageObjectModel();
+  const manager = new PageManager(page);
+  await manager.PlaywrightDevPage().goto();
+  await manager.PlaywrightDevPage().pageObjectModel();
   await expect(page.locator('article')).toContainText('Page Object Model is a common pattern');
 });
 
-test('should show search', async ({ page }) => {
-  const playwrightDev = new PlaywrightDevPage(page);
-  await playwrightDev.goto();
-  await playwrightDev.NavBar.search.click();
-  await playwrightDev.DocSearchModal.searchDocs().fill('Test');
-  await expect(playwrightDev.DocSearchModal.searchDocsModalLink('Writing Tests')).toBeVisible();
-  await expect(playwrightDev.DocSearchModal.searchDocsModalLink('Writing Tests')).toBeInViewport();
+test('search for "test" shows "Writing Tests" in results', async ({ page }) => {
+  const manager = new PageManager(page);
+  await manager.PlaywrightDevPage().goto();
+  await manager.CommonPage().NavBar().search.click();
+  await manager.CommonPage().DocSearchModal().searchDocs().fill('Test');
+  await expect(manager.CommonPage().DocSearchModal().searchDocsModalLink('Writing Tests')).toBeVisible();
+  await expect(manager.CommonPage().DocSearchModal().searchDocsModalLink('Writing Tests')).toBeInViewport();
+});
+
+test('search for "fail" shows "Pass" in results', async ({ page }) => {
+  //interesting Xfail
+  test.fail(true, 'Failing due to bug #1234');
+  const manager = new PageManager(page);
+  await manager.PlaywrightDevPage().goto();
+  await manager.CommonPage().NavBar().search.click();
+  await manager.CommonPage().DocSearchModal().searchDocs().fill('fail');
+  await expect(manager.CommonPage().DocSearchModal().searchDocsModalLink('Pass')).toBeVisible();
+  await expect(manager.CommonPage().DocSearchModal().searchDocsModalLink('Pass')).toBeInViewport();
 });
