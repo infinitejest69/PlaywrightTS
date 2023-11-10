@@ -8,8 +8,8 @@
 | Explore Test Configuration                                                             | :heavy_check_mark: |
 | API Testing and client generation                                                      | :question:         |
 | Storage State Before all                                                               | :x:                |
-| Reporters                                                                              | :question:         |
-| Test Fixtures                                                                          | :x:                |
+| Reporters                                                                              | :heavy_check_mark: |
+| Test Fixtures                                                                          | :heavy_check_mark: |
 | Project Dependencies                                                                   | :x:                |
 | Parallelism                                                                            | :x:                |
 | Parameterize tests                                                                     | :x:                |
@@ -32,3 +32,6 @@ These options are usually provided in the configuration file through testConfig.
 
 [Custom Reports](https://playwright.dev/docs/test-reporters#custom-reporters) :
 You can create a custom reporter by implementing a class with some of the reporter methods. Learn more about the Reporter API.
+
+[Fixtures](https://playwright.dev/docs/test-fixtures) :
+Playwright Test is based on the concept of test fixtures. Test fixtures are used to establish environment for each test, giving the test everything it needs and nothing else. Test fixtures are isolated between tests. With fixtures, you can group tests based on their meaning, instead of their common setup.
