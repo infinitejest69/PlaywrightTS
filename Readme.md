@@ -6,7 +6,7 @@
 | Page Manager                                                                           | :heavy_check_mark: |
 | Component for pages                                                                    | :heavy_check_mark: |
 | Explore Test Configuration                                                             | :heavy_check_mark: |
-| API Testing and client generation                                                      | :x:                |
+| API Testing and client generation                                                      | :question:         |
 | Storage State Before all                                                               | :x:                |
 | Reporters                                                                              | :question:         |
 | Test Fixtures                                                                          | :x:                |
@@ -22,6 +22,7 @@
 | [AllureReport](https://www.npmjs.com/package/allure-playwright)                        | :x:                |
 | [monocart-reporter](https://github.com/cenfun/monocart-reporter#preview)               | :x:                |
 | [Trx reporter](https://www.npmjs.com/package/playwright-trx-reporter?activeTab=readme) | :x:                |
+| [Check playwright BDD](https://vitalets.github.io/playwright-bdd/#/installation)       | :x:                |
 
 ## Useful Links
 
