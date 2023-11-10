@@ -17,23 +17,20 @@ test('should use client', async ({ request }) => {
     id: 1,
     name: 'Example Category',
   };
-
   const tagData: ITag = {
     id: 2,
     name: 'Cute',
   };
-  // Create related objects
   const categoryInstance = new Category(categoryData);
   const tagInstance = new Tag(tagData);
-  
-  // Example data to initialize a Pet instance
+    
   const petData: IPet = {
     id: 1,
     category: categoryInstance,
     name: 'Fluffy',
     photoUrls: ['https://example.com/fluffy.jpg'],
     tags: [tagInstance],
-    status: PetStatus.Available, // Use the appropriate value from your PetStatus enum
+    status: PetStatus.Available, 
   };
 
   // Create a Pet instance
