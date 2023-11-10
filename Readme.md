@@ -1,28 +1,29 @@
 # TODO list of things to play with
 
-| TODO                                                                                   | DONE               |
-| :------------------------------------------------------------------------------------- | :----------------- |
-| Page Object Model                                                                      | :heavy_check_mark: |
-| Page Manager                                                                           | :heavy_check_mark: |
-| Component for pages                                                                    | :heavy_check_mark: |
-| Explore Test Configuration                                                             | :heavy_check_mark: |
-| API Testing and client generation                                                      | :question:         |
-| Storage State Before all                                                               | :x:                |
-| Reporters                                                                              | :heavy_check_mark: |
-| Test Fixtures                                                                          | :heavy_check_mark: |
-| Project Dependencies                                                                   | :x:                |
-| Parallelism                                                                            | :x:                |
-| Parameterize tests                                                                     | :x:                |
-| Projects                                                                               | :x:                |
-| Retries                                                                                | :x:                |
-| Sharding                                                                               | :x:                |
-| Web server                                                                             | :x:                |
-| CI pipeline                                                                            | :x:                |
-| Visual Testing                                                                         | :heavy_check_mark: |
-| [AllureReport](https://www.npmjs.com/package/allure-playwright)                        | :x:                |
-| [monocart-reporter](https://github.com/cenfun/monocart-reporter#preview)               | :x:                |
-| [Trx reporter](https://www.npmjs.com/package/playwright-trx-reporter?activeTab=readme) | :x:                |
-| [Check playwright BDD](https://vitalets.github.io/playwright-bdd/#/installation)       | :x:                |
+| TODO                                                                                        | DONE               |
+| :------------------------------------------------------------------------------------------ | :----------------- |
+| Page Object Model                                                                           | :heavy_check_mark: |
+| Page Manager                                                                                | :heavy_check_mark: |
+| Component for pages                                                                         | :heavy_check_mark: |
+| Explore Test Configuration                                                                  | :heavy_check_mark: |
+| API Testing and client generation                                                           | :question:         |
+| Storage State Before all                                                                    | :x:                |
+| Reporters                                                                                   | :heavy_check_mark: |
+| Test Fixtures                                                                               | :heavy_check_mark: |
+| Project Dependencies                                                                        | :x:                |
+| Parallelism                                                                                 | :heavy_check_mark: |
+| Parameterize tests                                                                          | :x:                |
+| Projects                                                                                    | :x:                |
+| Retries                                                                                     | :x:                |
+| Sharding                                                                                    | :x:                |
+| Web server                                                                                  | :x:                |
+| CI pipeline                                                                                 | :x:                |
+| [Annotations and Tags](https://playwright.dev/docs/api/class-testproject#test-project-grep) | :x:                |
+| Visual Testing                                                                              | :heavy_check_mark: |
+| [AllureReport](https://www.npmjs.com/package/allure-playwright)                             | :x:                |
+| [monocart-reporter](https://github.com/cenfun/monocart-reporter#preview)                    | :x:                |
+| [Trx reporter](https://www.npmjs.com/package/playwright-trx-reporter?activeTab=readme)      | :x:                |
+| [Check playwright BDD](https://vitalets.github.io/playwright-bdd/#/installation)            | :x:                |
 
 ## Useful Links
 
