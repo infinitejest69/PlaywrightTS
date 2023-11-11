@@ -9,8 +9,11 @@
     "undici-types": "^5.26.5"
   },
   "devDependencies": {
+    "@cucumber/cucumber": "^10.0.1",
     "@playwright/test": "^1.39.0",
-    "@types/node": "^20.8.10"
+    "@types/node": "^20.8.10",
+    "monocart-reporter": "^1.7.13",
+    "playwright-bdd": "^5.4.0"
   },
   "scripts": {
     "test": "npx playwright test",
@@ -20,7 +23,10 @@
     "test-head": "npx playwright test --headed",
     "test-ff": "npx playwright test --project=firefox",
     "test-chrome": "npx playwright test --project=chromium",
-    "test-edge": "npx playwright test --project=Edge"
+    "test-edge": "npx playwright test --project=Edge",
+    "test-retry": "npx playwright test --retries=3",
+    "test-smoke": "npx playwright test --grep @Smoke",
+    "test-STA": "npx playwright test --grep @STA"
   },
   "keywords": [],
   "author": "",

@@ -14,16 +14,16 @@
 | Parallelism                                                                                 | :heavy_check_mark: |
 | Parameterize tests                                                                          | :heavy_check_mark: |
 | Projects                                                                                    | :heavy_check_mark: |
-| Retries                                                                                     | :x:                |
-| Sharding                                                                                    | :x:                |
+| Retries                                                                                     | :heavy_check_mark: |
+| Sharding                                                                                    | :heavy_check_mark: |
 | Web server                                                                                  | :x:                |
-| CI pipeline                                                                                 | :x:                |
-| [Annotations and Tags](https://playwright.dev/docs/api/class-testproject#test-project-grep) | :x:                |
+| CI pipeline                                                                                 | :question:         |
+| [Annotations and Tags](https://playwright.dev/docs/api/class-testproject#test-project-grep) | :heavy_check_mark: |
 | Visual Testing                                                                              | :heavy_check_mark: |
 | [AllureReport](https://www.npmjs.com/package/allure-playwright)                             | :x:                |
-| [monocart-reporter](https://github.com/cenfun/monocart-reporter#preview)                    | :x:                |
+| [monocart-reporter](https://github.com/cenfun/monocart-reporter#preview)                    | :heavy_check_mark: |
 | [Trx reporter](https://www.npmjs.com/package/playwright-trx-reporter?activeTab=readme)      | :x:                |
-| [Check playwright BDD](https://vitalets.github.io/playwright-bdd/#/installation)            | :x:                |
+| [Check playwright BDD](https://vitalets.github.io/playwright-bdd/#/installation)            | :heavy_check_mark: |
 
 ## Useful Links
 

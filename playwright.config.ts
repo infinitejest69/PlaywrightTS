@@ -1,6 +1,13 @@
 import { defineConfig, devices } from '@playwright/test';
 import type { ParamOption } from './Fixtures/ParamOption';
+import { defineBddConfig } from 'playwright-bdd';
+import { features } from 'process';
 
+const testDir = defineBddConfig({
+  paths: ['./features'],
+  require: ['steps/*.ts'],
+  featuresRoot: './Features',
+});
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -12,6 +19,8 @@ import type { ParamOption } from './Fixtures/ParamOption';
  */
 
 export default defineConfig<ParamOption>({
+  //Change to testDir for BDD
+  //testDir,
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -37,13 +46,24 @@ export default defineConfig<ParamOption>({
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
+  //retries: process.env.CI ? 2 : 2,
+  retries: 2,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: process.env.CI
     ? [['list'], ['json', { outputFile: 'test-results\\test-results.json' }], ['blob'], ['junit', { outputFile: 'test-results\\test-results.xml' }]]
-    : [['list'], ['html', { open: 'never' }]],
+    : [
+        ['list'],
+        ['html', { open: 'never' }],
+        [
+          'monocart-reporter',
+          {
+            name: 'My Test Report',
+            outputFile: './test-results/report.html',
+          },
+        ],
+      ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     launchOptions: {
