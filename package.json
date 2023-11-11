@@ -17,7 +17,10 @@
     "report": "npx playwright show-report",
     "test-ui": "npx playwright test --ui",
     "update": "npm install -D @playwright/test@latest",
-    "test-head": "npx playwright test --headed"
+    "test-head": "npx playwright test --headed",
+    "test-ff": "npx playwright test --project=firefox",
+    "test-chrome": "npx playwright test --project=chromium",
+    "test-edge": "npx playwright test --project=Edge"
   },
   "keywords": [],
   "author": "",

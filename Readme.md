@@ -13,7 +13,7 @@
 | Project Dependencies                                                                        | :x:                |
 | Parallelism                                                                                 | :heavy_check_mark: |
 | Parameterize tests                                                                          | :heavy_check_mark: |
-| Projects                                                                                    | :x:                |
+| Projects                                                                                    | :heavy_check_mark: |
 | Retries                                                                                     | :x:                |
 | Sharding                                                                                    | :x:                |
 | Web server                                                                                  | :x:                |

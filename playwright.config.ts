@@ -75,7 +75,6 @@ export default defineConfig<ParamOption>({
     //storageState:'state.json'
     //userAgent: 'some custom ua',
   },
-  
 
   /* Configure projects for major browsers */
   projects: [
@@ -99,12 +98,14 @@ export default defineConfig<ParamOption>({
 
     {
       name: 'Search',
-      use: { TestCases: { term: 'retry', expected: 'retries' } },
+      use: { TestCases: { term: 'Failed', expected: 'derpderp' } },
+      testMatch: /UsingFixtureTestParameter.spec.ts/,
     },
 
     {
       name: 'Search2',
       use: { TestCases: { term: 'Something', expected: 'Do something with each element in the list​' } },
+      testMatch: /UsingFixtureTestParameter.spec.ts/,
     },
 
     // {
