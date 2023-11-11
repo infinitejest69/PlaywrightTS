@@ -12,7 +12,7 @@
 | Test Fixtures                                                                               | :heavy_check_mark: |
 | Project Dependencies                                                                        | :x:                |
 | Parallelism                                                                                 | :heavy_check_mark: |
-| Parameterize tests                                                                          | :x:                |
+| Parameterize tests                                                                          | :heavy_check_mark: |
 | Projects                                                                                    | :x:                |
 | Retries                                                                                     | :x:                |
 | Sharding                                                                                    | :x:                |

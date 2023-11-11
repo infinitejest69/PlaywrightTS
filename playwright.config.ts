@@ -1,4 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
+import type { ParamOption } from './Fixtures/ParamOption';
 
 /**
  * Read environment variables from file.
@@ -9,7 +10,8 @@ import { defineConfig, devices } from '@playwright/test';
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
-export default defineConfig({
+
+export default defineConfig<ParamOption>({
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -73,6 +75,7 @@ export default defineConfig({
     //storageState:'state.json'
     //userAgent: 'some custom ua',
   },
+  
 
   /* Configure projects for major browsers */
   projects: [
@@ -92,6 +95,16 @@ export default defineConfig({
         ...devices['Desktop Edge'],
         channel: 'msedge',
       },
+    },
+
+    {
+      name: 'Search',
+      use: { TestCases: { term: 'retry', expected: 'retries' } },
+    },
+
+    {
+      name: 'Search2',
+      use: { TestCases: { term: 'Something', expected: 'Do something with each element in the list​' } },
     },
 
     // {
